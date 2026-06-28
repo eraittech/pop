@@ -10,13 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body data-testid="page-404" style="background:linear-gradient(135deg,#FFD600,#FF6B00);min-height:100vh;display:flex;align-items:center;justify-content:center;">
-  <div style="text-align:center;max-width:580px;padding:40px;">
-    <div style="font-family:var(--font-head);font-size:clamp(6rem,18vw,12rem);font-weight:900;line-height:1;color:var(--text);letter-spacing:-.06em;">4<span style="color:#fff;">0</span>4</div>
-    <h2 style="margin:24px 0 16px;">Crumbs! That page is missing.</h2>
-    <p style="font-size:1.05rem;margin-bottom:32px;">The page you’re after may have popped away. Let’s get you back to the good stuff.</p>
-    <a href="/" class="btn btn-ghost" style="border-color:var(--text);"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
-    <a href="/products.html" class="btn btn-primary" style="margin-left:8px;">Browse Flavors</a>
+<body data-testid="page-404">
+  <div data-include="header"></div>
+  <div style="min-height:80vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFD600,#FF6B00);padding-top:120px;padding-bottom:80px;">
+    <div style="text-align:center;max-width:580px;padding:40px;">
+      <div style="font-family:var(--font-head);font-size:clamp(6rem,18vw,12rem);font-weight:900;line-height:1;color:var(--text);letter-spacing:-.06em;">4<span style="color:#fff;">0</span>4</div>
+      <h2 style="margin:24px 0 16px;">Crumbs! That page is missing.</h2>
+      <p style="font-size:1.05rem;margin-bottom:32px;">The page you’re after may have popped away. Let’s get you back to the good stuff.</p>
+      <a href="/" class="btn btn-ghost" style="border-color:var(--text);"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      <a href="/products.html" class="btn btn-primary" style="margin-left:8px;">Browse Flavors</a>
+    </div>
   </div>
+  <div data-include="footer"></div>
+  <script src="/js/main.js"></script>
 </body>
 </html>
