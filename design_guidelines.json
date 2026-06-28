@@ -1,0 +1,103 @@
+{
+  "project": "Hey Pop Chips Corporate Website",
+  "theme": "light",
+  "archetype": "Archetype 6 (Vibrant Play) blended with Archetype 1 (Organic & Earthy)",
+  "color_palette": {
+    "primary": "#FFD600",
+    "secondary": "#FF6B00",
+    "accent": "#00C853",
+    "background_base": "#FDFCF0",
+    "surface": "#FFFFFF",
+    "text_primary": "#1A1A1A",
+    "text_secondary": "#4A4A4A",
+    "rules": "Avoid pure black (#000000). Use #1A1A1A for text. Background is a warm off-white (#FDFCF0) to feel organic, appetizing, and bright."
+  },
+  "typography": {
+    "headings": "Montserrat",
+    "body": "Poppins",
+    "scale": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-none text-text_primary",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-text_primary",
+      "h3": "text-2xl sm:text-3xl font-bold tracking-tight text-text_primary",
+      "body": "text-base md:text-lg font-medium leading-relaxed text-text_secondary",
+      "overline": "text-xs font-bold tracking-[0.2em] uppercase text-secondary"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-6 lg:px-12",
+    "marketing_grid": "Bento 'Tetris' style with gap-8 to gap-12. Asymmetric layouts to feel dynamic and modern.",
+    "admin_grid": "Dense 'Control Room' grid with gap-4 to gap-6.",
+    "generous_spacing": "Sections should use py-24 or py-32 for luxurious breathing room.",
+    "border_radius": "rounded-[2rem] or rounded-3xl for marketing cards to feel fun and bouncy. rounded-lg for Admin panel."
+  },
+  "components": {
+    "header": {
+      "state_top": "Transparent background, links in dark text or white depending on the hero image behind it.",
+      "state_scrolled": "Crystal Glassmorphism: sticky top-0 z-50 backdrop-blur-2xl bg-white/80 border-b border-white/40 shadow-sm."
+    },
+    "buttons": {
+      "primary": "Pill-shaped (rounded-full) bg-[#FF6B00] text-white hover:bg-[#E65C00] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 font-bold px-8 py-4.",
+      "secondary": "Pill-shaped bg-[#FFD600] text-[#1A1A1A] hover:bg-[#E6C200] transition-all font-bold px-8 py-4."
+    },
+    "product_cards": {
+      "style": "Neumorphism mix: soft ambient shadow, flat solid surface. Generous p-8 padding. Use vibrant background tints for different flavors (e.g., bg-yellow-50, bg-orange-50).",
+      "twist": "Product images MUST 'break out' of the card container using absolute positioning or negative top margin for a dynamic 3D popping effect."
+    },
+    "admin_panel": {
+      "style": "Functional, clean. Use Shadcn primitives (Tables, Forms, Dialogs). Keep styling minimal, prioritize data density and usability."
+    }
+  },
+  "motion_and_interactions": {
+    "hero": "Floating chips using GSAP or framer-motion. Animate y-axis (yoyo) and slight rotation to simulate anti-gravity and playfulness.",
+    "scroll": "Parallax scrolling on background blobs/waves. Staggered fade-up (`y: 40, opacity: 0` to `y: 0, opacity: 1`) for bento grid elements as they enter viewport.",
+    "micro_interactions": "Hover states on all cards (lift up + larger shadow). Ingredient images scale slightly on hover."
+  },
+  "pages_structure": {
+    "home": {
+      "hero": "Immersive banner with floating chips around a giant Montserrat H1. CTA to 'Explore Flavors'. Wave background divider at the bottom.",
+      "product_highlights": "Horizontal swiper or grid of breaking-out product cards.",
+      "why_us": "Bento grid combining text blocks and lifestyle images.",
+      "ingredients": "Marquee or stagger layout of fresh ingredients with health benefits.",
+      "where_to_buy": "Preview of online marketplaces with recognizable logos.",
+      "testimonials": "Swiper carousel with soft pastel/organic background."
+    },
+    "about_us": "Story-driven, editorial layout. Large typography, asymmetrical image placements representing the mission and manufacturing quality.",
+    "products": "Colorful grid of rounded cards. High contrast. Filters at the top.",
+    "product_details": "Split layout: Sticky massive product image on the left, scrollable nutritional details, ingredients, and health benefits on the right.",
+    "store_locator": "Split layout: Map on one side, search (city/state/pincode) and list on the other. Use custom styled markers.",
+    "available_online": "Grid of Marketplace cards (Amazon, Flipkart, Blinkit, Zepto) with hover lifting effects.",
+    "admin_panel": "Sidebar navigation. CRUD tables for Products, Stores, Testimonials, Marketplaces, Vending."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "hero_chips",
+        "url": "https://images.pexels.com/photos/34466116/pexels-photo-34466116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Close up potato chips, use for hero floating elements."
+      },
+      {
+        "category": "product_showcase",
+        "url": "https://images.pexels.com/photos/15010284/pexels-photo-15010284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Rustic chips display for product detail page and about page."
+      },
+      {
+        "category": "lifestyle",
+        "url": "https://images.unsplash.com/photo-1615657711994-f0e35eb9e46d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxwZW9wbGUlMjBlYXRpbmclMjBzbmFja3N8ZW58MHx8fHwxNzgyNjIxOTc1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "People enjoying snacks together for About Us or Testimonials."
+      },
+      {
+        "category": "ingredients",
+        "url": "https://images.pexels.com/photos/4113915/pexels-photo-4113915.jpeg",
+        "description": "Fresh herbs and spices for the Healthy Ingredients section."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: All interactive and key informational elements MUST include a `data-testid` attribute for testing.",
+    "Do NOT use Inter for headings. Use Montserrat Black/ExtraBold for maximum impact.",
+    "Apply 'Mobile First' principles: stack grids to 1 column on mobile.",
+    "Tech Translation: The user requested GSAP and SwiperJS. Since the stack is React, you may use `@gsap/react` or `framer-motion` to recreate the fluid, floating scroll trigger effects. For sliders, `swiper/react` or Shadcn Carousel (Embla) are perfectly suited.",
+    "Make product images 'pop' out of their cards using negative margins or absolute positioning to give a 3D feel.",
+    "For the admin panel, rely on Shadcn components for tables and forms. Keep the admin panel strictly functional."
+  ]
+}
