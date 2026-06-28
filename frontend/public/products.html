@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Flavors — Hey Pop Chips</title>
+  <meta name="description" content="Explore the full Hey Pop Chips range — seven bold, popped flavors made with real ingredients." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-testid="page-products">
+  <div data-include="header"></div>
+
+  <section class="page-banner" data-testid="products-banner">
+    <div class="container">
+      <div class="crumb">Home • Products</div>
+      <h1>The Flavor <em style="background:var(--text);color:var(--primary);padding:0 14px;border-radius:10px;font-style:italic;display:inline-block;line-height:1.1;">Lineup.</em></h1>
+      <p>Seven flavors, three pack sizes each. Find your forever-favorite — or rotate through all of them.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <!-- Filter chips -->
+      <div class="filter-chips reveal" style="justify-content:center;margin-bottom:64px;" data-testid="product-filters">
+        <button class="chip active" data-filter="all">All Flavors</button>
+        <button class="chip" data-filter="classic">Classic</button>
+        <button class="chip" data-filter="spicy">Spicy</button>
+        <button class="chip" data-filter="tangy">Tangy</button>
+        <button class="chip" data-filter="cheesy">Cheesy</button>
+        <button class="chip" data-filter="vegan">Vegan</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <div class="product-card tint-y reveal" data-tags="classic vegan" data-testid="prod-sea-salt">
+          <div class="product-image" style="background:#fff;"><div><span>Sea Salt</span><small>Original</small></div></div>
+          <div class="product-name">Sea Salt Original</div>
+          <p class="product-desc">The OG. Hand-harvested sea salt over our signature crunch.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-leaf"></i>Vegan</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-p reveal" data-tags="tangy vegan" data-testid="prod-tangy-tomato">
+          <div class="product-image" style="background:#FF4D4D;color:#fff;"><div><span>Tangy</span><small>Tomato</small></div></div>
+          <div class="product-name">Tangy Tomato</div>
+          <p class="product-desc">Sun-ripened tomato meets tangy spice. Childhood, but louder.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-leaf"></i>Vegan</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-g reveal" data-tags="classic" data-testid="prod-cream-onion">
+          <div class="product-image" style="background:#00C853;color:#fff;"><div><span>Cream &amp;</span><small>Onion</small></div></div>
+          <div class="product-name">Cream &amp; Onion</div>
+          <p class="product-desc">Cool cream, sweet onion, finish that begs for more.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-leaf"></i>Veg</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-o reveal" data-tags="spicy vegan" data-testid="prod-peri-peri">
+          <div class="product-image" style="background:#FF6B00;color:#fff;"><div><span>Peri</span><small>Peri</small></div></div>
+          <div class="product-name">Peri Peri</div>
+          <p class="product-desc">Smoky African chili. Slow burn. Big love.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-fire"></i>Spicy</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-y reveal" data-tags="cheesy" data-testid="prod-cheese-burst">
+          <div class="product-image" style="background:#FFD600;color:var(--text);"><div><span>Cheese</span><small>Burst</small></div></div>
+          <div class="product-name">Cheese Burst</div>
+          <p class="product-desc">Real cheddar powder. Goes hard in 3.. 2.. 1.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-cheese"></i>Cheesy</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-p reveal" data-tags="spicy tangy vegan" data-testid="prod-sweet-chili">
+          <div class="product-image" style="background:#E91E63;color:#fff;"><div><span>Sweet</span><small>Chili</small></div></div>
+          <div class="product-name">Sweet Chili</div>
+          <p class="product-desc">Thai-inspired sweet heat. Stop us before we eat the whole bag.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-fire"></i>Mild Spicy</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card tint-w reveal" data-tags="classic vegan" data-testid="prod-salt-pepper">
+          <div class="product-image" style="background:#2C2C2C;color:#FFD600;"><div><span>Salt &amp;</span><small>Pepper</small></div></div>
+          <div class="product-name">Salt &amp; Pepper</div>
+          <p class="product-desc">Cracked black pepper, sea salt, nothing else. Minimal. Maximal.</p>
+          <div class="product-meta"><span><i class="fa-solid fa-leaf"></i>Vegan</span><span><i class="fa-solid fa-weight-scale"></i>30g · 70g · 150g</span></div>
+          <a class="product-link" href="product-detail.html">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-include="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // Filter chips
+    document.querySelectorAll('.filter-chips .chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chips .chip').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('#products-grid .product-card').forEach((card) => {
+          const tags = (card.dataset.tags || '').split(' ');
+          card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

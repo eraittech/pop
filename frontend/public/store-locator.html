@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store Locator — Hey Pop Chips</title>
+  <meta name="description" content="Find Hey Pop Chips at 1,200+ retailers across 60+ cities in India. Search by city, area, or pincode." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Leaflet (placeholder until Google Maps API key provided) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-testid="page-store-locator">
+  <div data-include="header"></div>
+
+  <section class="page-banner green" data-testid="locator-banner">
+    <div class="container">
+      <div class="crumb">Home • Store Locator</div>
+      <h1>Find a pack <em style="background:#fff;color:var(--accent);padding:0 12px;border-radius:8px;font-style:italic;display:inline-block;">near you.</em></h1>
+      <p>1,200+ retail partners. 60+ cities. 200+ vending machines. We’re probably already on your street.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:48px;">
+    <div class="container">
+      <div class="locator-wrap" data-testid="locator-wrap">
+        <aside class="locator-panel" data-testid="locator-panel">
+          <div class="input-group">
+            <label for="city-input">City / Area / Pincode</label>
+            <input type="text" id="city-input" class="input" placeholder="e.g. Mumbai, Indiranagar, 400001" data-testid="search-input" />
+          </div>
+          <div class="input-group">
+            <label for="state-input">State</label>
+            <select id="state-input" data-testid="state-select">
+              <option value="">All States</option>
+              <option>Maharashtra</option>
+              <option>Delhi NCR</option>
+              <option>Karnataka</option>
+              <option>Telangana</option>
+              <option>Tamil Nadu</option>
+              <option>Gujarat</option>
+              <option>West Bengal</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Store Type</label>
+            <div class="filter-chips" data-testid="store-filters">
+              <button class="chip active" data-type="all">All</button>
+              <button class="chip" data-type="retail">Retail</button>
+              <button class="chip" data-type="supermarket">Supermarket</button>
+              <button class="chip" data-type="distributor">Distributor</button>
+              <button class="chip" data-type="vending">Vending</button>
+              <button class="chip" data-type="modern">Modern Trade</button>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" id="search-btn" data-testid="search-button">
+            <i class="fa-solid fa-location-crosshairs"></i> Search Stores
+          </button>
+          <div style="border-top:1px solid var(--border);padding-top:16px;">
+            <div style="font-family:var(--font-head);font-weight:800;margin-bottom:12px;font-size:.9rem;">Nearby Stores <span id="store-count" style="color:var(--text-soft);font-weight:600;">(8)</span></div>
+            <div class="store-list" id="store-list" data-testid="store-list"></div>
+          </div>
+        </aside>
+        <div id="map" class="locator-map" data-testid="locator-map"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="sec-head">
+        <span class="overline">Categories</span>
+        <h2>Where you can find us.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+        <div class="ingredient-card"><div class="ingredient-emoji"><i class="fa-solid fa-shop"></i></div><h4>Retail Stores</h4><p>900+ kirana &amp; modern stores</p></div>
+        <div class="ingredient-card orange"><div class="ingredient-emoji"><i class="fa-solid fa-basket-shopping"></i></div><h4>Supermarkets</h4><p>Reliance, More, DMart partners</p></div>
+        <div class="ingredient-card green"><div class="ingredient-emoji"><i class="fa-solid fa-truck-fast"></i></div><h4>Distributors</h4><p>40+ wholesale partners pan-India</p></div>
+        <div class="ingredient-card"><div class="ingredient-emoji"><i class="fa-solid fa-robot"></i></div><h4>Vending Machines</h4><p>200+ machines across metros</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div data-include="footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // ---- Mock store data (admin would manage this in PHP backend) ----
+    const stores = [
+      { id:1, name:'Hey Pop @ Phoenix Marketcity', type:'modern', tag:'Modern Trade', city:'Mumbai', state:'Maharashtra', pincode:'400070', address:'L1, Phoenix Marketcity, Kurla West', phone:'+91 22 4040 1234', hours:'10 AM – 10 PM', lat:19.0866, lng:72.8866 },
+      { id:2, name:'Bandra Sun &amp; Sand Store', type:'retail', tag:'Retail Store', city:'Mumbai', state:'Maharashtra', pincode:'400050', address:'Linking Road, Bandra West', phone:'+91 22 2645 9012', hours:'9 AM – 11 PM', lat:19.0596, lng:72.8295 },
+      { id:3, name:'DMart Powai', type:'supermarket', tag:'Supermarket', city:'Mumbai', state:'Maharashtra', pincode:'400076', address:'Hiranandani Gardens, Powai', phone:'+91 22 7892 0000', hours:'8 AM – 11 PM', lat:19.1197, lng:72.9050 },
+      { id:4, name:'Khan Market Kirana', type:'retail', tag:'Retail Store', city:'New Delhi', state:'Delhi NCR', pincode:'110003', address:'Khan Market, Rabindra Nagar', phone:'+91 11 4123 8800', hours:'9 AM – 10 PM', lat:28.5990, lng:77.2270 },
+      { id:5, name:'Reliance Smart Connaught Pl.', type:'supermarket', tag:'Supermarket', city:'New Delhi', state:'Delhi NCR', pincode:'110001', address:'CP Block A, Connaught Place', phone:'+91 11 4567 1212', hours:'9 AM – 10 PM', lat:28.6315, lng:77.2167 },
+      { id:6, name:'Hey Pop Vending — DLF Cyber City', type:'vending', tag:'Vending Machine', city:'Gurugram', state:'Delhi NCR', pincode:'122002', address:'Tower 7, DLF Cyber City', phone:'—', hours:'24/7', lat:28.4946, lng:77.0890 },
+      { id:7, name:'Indiranagar Express', type:'retail', tag:'Retail Store', city:'Bengaluru', state:'Karnataka', pincode:'560038', address:'100ft Road, Indiranagar', phone:'+91 80 4567 7000', hours:'8 AM – 11 PM', lat:12.9719, lng:77.6412 },
+      { id:8, name:'More Megastore Whitefield', type:'modern', tag:'Modern Trade', city:'Bengaluru', state:'Karnataka', pincode:'560066', address:'Whitefield Main Road', phone:'+91 80 2845 1212', hours:'9 AM – 10 PM', lat:12.9698, lng:77.7500 },
+      { id:9, name:'Snack Express Distributors', type:'distributor', tag:'Distributor', city:'Hyderabad', state:'Telangana', pincode:'500081', address:'Madhapur Industrial Estate', phone:'+91 40 6677 8899', hours:'9 AM – 6 PM (B2B)', lat:17.4485, lng:78.3908 },
+      { id:10, name:'Hey Pop @ T Nagar', type:'retail', tag:'Retail Store', city:'Chennai', state:'Tamil Nadu', pincode:'600017', address:'Ranganathan Street, T Nagar', phone:'+91 44 2434 5500', hours:'10 AM – 10 PM', lat:13.0418, lng:80.2336 },
+      { id:11, name:'Pune FC Road Outlet', type:'retail', tag:'Retail Store', city:'Pune', state:'Maharashtra', pincode:'411005', address:'FC Road, Shivajinagar', phone:'+91 20 2553 0000', hours:'9 AM – 11 PM', lat:18.5236, lng:73.8478 },
+      { id:12, name:'Hey Pop Vending — Mumbai Airport T2', type:'vending', tag:'Vending Machine', city:'Mumbai', state:'Maharashtra', pincode:'400099', address:'Terminal 2, Departures Level 3', phone:'—', hours:'24/7', lat:19.0896, lng:72.8656 },
+    ];
+
+    const TAG_CLASS = { retail:'', supermarket:'', modern:'', distributor:'distributor', vending:'vending', online:'online' };
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let currentState = '';
+    let markers = [];
+
+    // Init Leaflet
+    const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([20.5937, 78.9629], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    const popIcon = (color) => L.divIcon({
+      className: 'hp-marker',
+      html: `<div style="width:36px;height:36px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:Montserrat,sans-serif;box-shadow:0 6px 16px rgba(0,0,0,.25);border:3px solid #fff;">!</div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
+    });
+    const colorFor = (t) => t === 'vending' ? '#00C853' : t === 'distributor' ? '#FF6B00' : '#1A1A1A';
+
+    function renderStores() {
+      // Clear existing markers
+      markers.forEach((m) => map.removeLayer(m));
+      markers = [];
+      const list = document.getElementById('store-list');
+      list.innerHTML = '';
+      const filtered = stores.filter((s) => {
+        if (currentFilter !== 'all' && s.type !== currentFilter) return false;
+        if (currentState && s.state !== currentState) return false;
+        if (currentSearch) {
+          const q = currentSearch.toLowerCase();
+          if (!(s.city.toLowerCase().includes(q) || s.address.toLowerCase().includes(q) || s.pincode.includes(q) || s.name.toLowerCase().includes(q))) return false;
+        }
+        return true;
+      });
+      document.getElementById('store-count').textContent = `(${filtered.length})`;
+      filtered.forEach((s) => {
+        const tagClass = TAG_CLASS[s.type] || '';
+        const card = document.createElement('div');
+        card.className = 'store-card';
+        card.setAttribute('data-testid', 'store-card-' + s.id);
+        card.innerHTML = `
+          <span class="store-tag ${tagClass}">${s.tag}</span>
+          <h4>${s.name}</h4>
+          <div class="meta">${s.address}, ${s.city} · ${s.pincode}</div>
+          <div class="meta" style="margin-top:6px;"><i class="fa-solid fa-phone" style="color:var(--secondary);margin-right:4px;"></i> ${s.phone} · <i class="fa-regular fa-clock" style="margin-left:8px;margin-right:4px;"></i>${s.hours}</div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-weight:700;font-size:.85rem;color:var(--secondary);">
+            <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+          </a>
+        `;
+        card.addEventListener('click', () => {
+          map.setView([s.lat, s.lng], 13, { animate: true });
+        });
+        list.appendChild(card);
+        const m = L.marker([s.lat, s.lng], { icon: popIcon(colorFor(s.type)) }).addTo(map);
+        m.bindPopup(`<strong>${s.name}</strong><br/>${s.address}, ${s.city}<br/>${s.hours}`);
+        markers.push(m);
+      });
+      if (markers.length) {
+        const group = L.featureGroup(markers);
+        try { map.fitBounds(group.getBounds().pad(0.2)); } catch (e) {}
+      }
+    }
+
+    // Wire up controls
+    document.querySelectorAll('[data-testid="store-filters"] .chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-testid="store-filters"] .chip').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.type;
+        renderStores();
+      });
+    });
+    document.getElementById('search-btn').addEventListener('click', () => {
+      currentSearch = document.getElementById('city-input').value.trim();
+      currentState = document.getElementById('state-input').value;
+      renderStores();
+    });
+    document.getElementById('city-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') document.getElementById('search-btn').click();
+    });
+
+    renderStores();
+  </script>
+</body>
+</html>

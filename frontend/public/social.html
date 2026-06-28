@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social — Hey Pop Chips</title>
+  <meta name="description" content="Follow Hey Pop Chips on Instagram, Facebook, YouTube and LinkedIn. Tag #HeyPopMoments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-testid="page-social">
+  <div data-include="header"></div>
+
+  <section class="page-banner orange">
+    <div class="container">
+      <div class="crumb">Home • Social</div>
+      <h1>#HeyPop<em style="background:var(--text);color:var(--primary);padding:0 12px;border-radius:8px;font-style:italic;display:inline-block;">Moments</em></h1>
+      <p>Tag <strong>@heypopchips</strong> in your snack-life moments. We repost weekly.</p>
+    </div>
+  </section>
+
+  <section data-testid="section-social-links">
+    <div class="container">
+      <div class="marketplace-grid">
+        <a href="https://instagram.com/heypopchips" target="_blank" rel="noopener" class="marketplace-card reveal" data-testid="social-card-ig">
+          <div class="mp-logo" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4);"><i class="fa-brands fa-instagram" style="font-size:2rem;color:#fff;"></i></div>
+          <div class="mp-name">Instagram</div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--text-soft);">@heypopchips · 124K followers</div>
+          <span class="mp-card-cta">Follow <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="https://facebook.com/heypopchips" target="_blank" rel="noopener" class="marketplace-card reveal" data-testid="social-card-fb">
+          <div class="mp-logo" style="background:#1877F2;"><i class="fa-brands fa-facebook-f" style="font-size:2rem;color:#fff;"></i></div>
+          <div class="mp-name">Facebook</div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--text-soft);">/heypopchips</div>
+          <span class="mp-card-cta">Like page <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="https://youtube.com/@heypopchips" target="_blank" rel="noopener" class="marketplace-card reveal" data-testid="social-card-yt">
+          <div class="mp-logo" style="background:#FF0000;"><i class="fa-brands fa-youtube" style="font-size:2rem;color:#fff;"></i></div>
+          <div class="mp-name">YouTube</div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--text-soft);">Behind the pop</div>
+          <span class="mp-card-cta">Subscribe <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="https://linkedin.com/company/heypopchips" target="_blank" rel="noopener" class="marketplace-card reveal" data-testid="social-card-li">
+          <div class="mp-logo" style="background:#0A66C2;"><i class="fa-brands fa-linkedin-in" style="font-size:2rem;color:#fff;"></i></div>
+          <div class="mp-name">LinkedIn</div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--text-soft);">Careers &amp; updates</div>
+          <span class="mp-card-cta">Follow <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;" data-testid="section-instagram-grid">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="overline">Instagram Feed</span>
+        <h2>From the grid.</h2>
+        <p>The latest posts from <strong>@heypopchips</strong>. (Powered by Instagram Embed.)</p>
+      </div>
+      <div class="ig-grid">
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Sea Salt &amp; sunsets 🌞</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>New drop: Cheese Burst 🧀</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Behind the pop 🏭</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Pune fans showing love 💕</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Peri Peri challenge 🔥</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Movie night essentials 🎬</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Office snack of the week 💼</span><div class="ig-overlay"></div></div>
+        <div class="ig-tile reveal"><i class="fa-brands fa-instagram"></i><span>Cream &amp; Onion appreciation 💚</span><div class="ig-overlay"></div></div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="https://instagram.com/heypopchips" target="_blank" rel="noopener" class="btn btn-primary" data-testid="ig-follow-cta">
+          <i class="fa-brands fa-instagram"></i> Follow @heypopchips
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div data-include="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

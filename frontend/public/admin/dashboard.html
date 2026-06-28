@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Hey Pop Chips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="admin-body" data-testid="page-admin-dashboard">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+        <span>Hey Pop<span style="color:var(--secondary)">.</span></span>
+      </div>
+      <nav class="admin-nav" data-testid="admin-nav">
+        <a href="#dashboard" data-tab="dashboard" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="#products" data-tab="products"><i class="fa-solid fa-box"></i> Products</a>
+        <a href="#categories" data-tab="categories"><i class="fa-solid fa-tags"></i> Categories</a>
+        <a href="#stores" data-tab="stores"><i class="fa-solid fa-location-dot"></i> Store Locator</a>
+        <a href="#vending" data-tab="vending"><i class="fa-solid fa-robot"></i> Vending Machines</a>
+        <a href="#marketplaces" data-tab="marketplaces"><i class="fa-solid fa-cart-shopping"></i> Online Platforms</a>
+        <a href="#testimonials" data-tab="testimonials"><i class="fa-solid fa-quote-left"></i> Testimonials</a>
+        <a href="#enquiries" data-tab="enquiries"><i class="fa-solid fa-envelope-open"></i> Enquiries</a>
+        <a href="#instagram" data-tab="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#media" data-tab="media"><i class="fa-solid fa-photo-film"></i> Media Library</a>
+        <a href="#seo" data-tab="seo"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</a>
+        <a href="#settings" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="#" id="logout-btn" style="margin-top:24px;color:#FF6B6B;" data-testid="admin-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <h2 id="page-title">Dashboard</h2>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="icon-btn" title="Notifications"><i class="fa-regular fa-bell"></i></button>
+          <div class="admin-user" data-testid="admin-user"><div class="ava">A</div> Admin</div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <section class="admin-section active" data-section="dashboard">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="label">Products</div><div class="value" data-counter="7">7</div><div class="delta">+1 this month</div></div>
+          <div class="stat-card"><div class="label">Stores</div><div class="value" data-counter="1248">1,248</div><div class="delta">+24 this week</div></div>
+          <div class="stat-card"><div class="label">Vending</div><div class="value" data-counter="214">214</div><div class="delta">+6 installed</div></div>
+          <div class="stat-card"><div class="label">New Enquiries</div><div class="value" data-counter="36">36</div><div class="delta">last 7 days</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:20px;">
+          <div class="admin-panel">
+            <div class="admin-panel-head">
+              <h3>Recent Enquiries</h3>
+              <a href="#enquiries" data-tab="enquiries" style="font-weight:700;color:var(--secondary);">View all <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <table class="admin-table">
+              <thead><tr><th>Name</th><th>Subject</th><th>Date</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Aanya Singh</td><td>Stockist enquiry — Jaipur</td><td>Feb 12, 2026</td><td><span class="badge badge-yellow">New</span></td></tr>
+                <tr><td>Marriott Hotels India</td><td>B2B / Bulk order</td><td>Feb 11, 2026</td><td><span class="badge badge-yellow">New</span></td></tr>
+                <tr><td>Devansh Kapoor</td><td>Vending partnership</td><td>Feb 10, 2026</td><td><span class="badge badge-green">Replied</span></td></tr>
+                <tr><td>Forbes India</td><td>Press / Media</td><td>Feb 9, 2026</td><td><span class="badge badge-green">Replied</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="admin-panel">
+            <div class="admin-panel-head"><h3>Top Flavors</h3></div>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Peri Peri</span><span>32%</span></div><div style="height:8px;background:#F6F7FB;border-radius:8px;overflow:hidden;margin-top:6px;"><div style="width:32%;height:100%;background:var(--secondary);"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Sea Salt</span><span>24%</span></div><div style="height:8px;background:#F6F7FB;border-radius:8px;overflow:hidden;margin-top:6px;"><div style="width:24%;height:100%;background:var(--primary);"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Cream &amp; Onion</span><span>18%</span></div><div style="height:8px;background:#F6F7FB;border-radius:8px;overflow:hidden;margin-top:6px;"><div style="width:18%;height:100%;background:var(--accent);"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Cheese Burst</span><span>14%</span></div><div style="height:8px;background:#F6F7FB;border-radius:8px;overflow:hidden;margin-top:6px;"><div style="width:14%;height:100%;background:#7E57C2;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Others</span><span>12%</span></div><div style="height:8px;background:#F6F7FB;border-radius:8px;overflow:hidden;margin-top:6px;"><div style="width:12%;height:100%;background:#8A8A8A;"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="admin-section" data-section="products">
+        <div class="admin-panel">
+          <div class="admin-panel-head">
+            <h3>Products</h3>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;" data-testid="add-product-btn"><i class="fa-solid fa-plus"></i> Add Product</button>
+          </div>
+          <table class="admin-table" data-testid="products-table">
+            <thead><tr><th>Flavor</th><th>Category</th><th>Pack Sizes</th><th>Status</th><th>Featured</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Sea Salt Original</strong></td><td>Classic</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>★</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Tangy Tomato</strong></td><td>Tangy</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>★</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Cream &amp; Onion</strong></td><td>Classic</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>★</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Peri Peri</strong></td><td>Spicy</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>★</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Cheese Burst</strong></td><td>Cheesy</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>—</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Sweet Chili</strong></td><td>Spicy</td><td>30g / 70g / 150g</td><td><span class="badge badge-green">Active</span></td><td>—</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Salt &amp; Pepper</strong></td><td>Classic</td><td>30g / 70g / 150g</td><td><span class="badge badge-yellow">Draft</span></td><td>—</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="admin-section" data-section="categories">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Product Categories</h3><button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;"><i class="fa-solid fa-plus"></i> Add Category</button></div>
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Slug</th><th>Products</th><th>Color</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Classic</td><td>classic</td><td>3</td><td><span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:#FFD600;"></span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Spicy</td><td>spicy</td><td>2</td><td><span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:#FF6B00;"></span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Tangy</td><td>tangy</td><td>1</td><td><span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:#E91E63;"></span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Cheesy</td><td>cheesy</td><td>1</td><td><span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:#FFC93D;"></span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- STORES -->
+      <section class="admin-section" data-section="stores">
+        <div class="admin-panel">
+          <div class="admin-panel-head">
+            <h3>Store Locator</h3>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem;color:var(--text);"><i class="fa-solid fa-file-import"></i> Import CSV</button>
+              <button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;" data-testid="add-store-btn"><i class="fa-solid fa-plus"></i> Add Store</button>
+            </div>
+          </div>
+          <table class="admin-table" data-testid="stores-table">
+            <thead><tr><th>Store</th><th>City</th><th>Type</th><th>Phone</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hey Pop @ Phoenix Marketcity</strong><div style="font-size:.78rem;color:var(--text-soft);">L1, Kurla West, 400070</div></td><td>Mumbai</td><td><span class="badge badge-yellow">Modern Trade</span></td><td>+91 22 4040 1234</td><td><span class="badge badge-green">Active</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>DMart Powai</strong><div style="font-size:.78rem;color:var(--text-soft);">Hiranandani Gardens, 400076</div></td><td>Mumbai</td><td><span class="badge badge-yellow">Supermarket</span></td><td>+91 22 7892 0000</td><td><span class="badge badge-green">Active</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Reliance Smart Connaught Pl.</strong><div style="font-size:.78rem;color:var(--text-soft);">CP Block A, 110001</div></td><td>New Delhi</td><td><span class="badge badge-yellow">Supermarket</span></td><td>+91 11 4567 1212</td><td><span class="badge badge-green">Active</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Indiranagar Express</strong><div style="font-size:.78rem;color:var(--text-soft);">100ft Road, 560038</div></td><td>Bengaluru</td><td><span class="badge badge-green">Retail</span></td><td>+91 80 4567 7000</td><td><span class="badge badge-green">Active</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+              <tr><td><strong>Snack Express Distributors</strong><div style="font-size:.78rem;color:var(--text-soft);">Madhapur, 500081</div></td><td>Hyderabad</td><td><span class="badge badge-red">Distributor</span></td><td>+91 40 6677 8899</td><td><span class="badge badge-yellow">Pending</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button> <button class="icon-btn danger"><i class="fa-solid fa-trash"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VENDING -->
+      <section class="admin-section" data-section="vending">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Vending Machines</h3><button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;"><i class="fa-solid fa-plus"></i> Add Machine</button></div>
+          <table class="admin-table">
+            <thead><tr><th>Location</th><th>City</th><th>Type</th><th>Last Restock</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Mumbai Airport T2</strong></td><td>Mumbai</td><td>Airport</td><td>2 days ago</td><td><span class="badge badge-green">Stocked</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>DLF Cyber City Tower 7</strong></td><td>Gurugram</td><td>Office</td><td>1 day ago</td><td><span class="badge badge-green">Stocked</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>Cult.fit Indiranagar</strong></td><td>Bengaluru</td><td>Gym</td><td>4 days ago</td><td><span class="badge badge-yellow">Low Stock</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>Rajiv Chowk Metro</strong></td><td>New Delhi</td><td>Metro</td><td>6 days ago</td><td><span class="badge badge-red">Empty</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- MARKETPLACES -->
+      <section class="admin-section" data-section="marketplaces">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Online Platforms</h3><button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;"><i class="fa-solid fa-plus"></i> Add Platform</button></div>
+          <table class="admin-table">
+            <thead><tr><th>Platform</th><th>URL</th><th>Order</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Amazon</strong></td><td>amazon.in/heypop</td><td>1</td><td><span class="badge badge-green">Visible</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>Flipkart</strong></td><td>flipkart.com/heypop</td><td>2</td><td><span class="badge badge-green">Visible</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>Blinkit</strong></td><td>blinkit.com/heypop</td><td>3</td><td><span class="badge badge-green">Visible</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>Zepto</strong></td><td>zeptonow.com/heypop</td><td>4</td><td><span class="badge badge-green">Visible</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td><strong>BigBasket</strong></td><td>bigbasket.com/heypop</td><td>5</td><td><span class="badge badge-yellow">Draft</span></td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="admin-section" data-section="testimonials">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Testimonials</h3><button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;"><i class="fa-solid fa-plus"></i> Add Testimonial</button></div>
+          <table class="admin-table">
+            <thead><tr><th>Author</th><th>Quote</th><th>Rating</th><th>Featured</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Ananya Iyer · Bengaluru</td><td>Finally a chip my dietitian and taste buds both approve of…</td><td>★★★★★</td><td>✓</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Rohan Mehta · Pune</td><td>My kids beg for these instead of the usual junk…</td><td>★★★★★</td><td>✓</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Priya Sharma · Delhi</td><td>Cream &amp; Onion that doesn't taste fake…</td><td>★★★★★</td><td>✓</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+              <tr><td>Karan, Snack Express</td><td>We stock Hey Pop across 22 outlets…</td><td>★★★★½</td><td>—</td><td><button class="icon-btn"><i class="fa-solid fa-pen"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ENQUIRIES -->
+      <section class="admin-section" data-section="enquiries">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Contact Enquiries</h3><button class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem;color:var(--text);"><i class="fa-solid fa-file-csv"></i> Export CSV</button></div>
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Aanya Singh</td><td>aanya@kiranamart.in</td><td>Stockist enquiry — Jaipur</td><td>Feb 12</td><td><span class="badge badge-yellow">New</span></td><td><button class="icon-btn"><i class="fa-solid fa-eye"></i></button></td></tr>
+              <tr><td>Marriott Hotels India</td><td>procure@marriott.in</td><td>B2B order — mini-bars</td><td>Feb 11</td><td><span class="badge badge-yellow">New</span></td><td><button class="icon-btn"><i class="fa-solid fa-eye"></i></button></td></tr>
+              <tr><td>Devansh Kapoor</td><td>devansh@cultfit.co</td><td>Vending partnership</td><td>Feb 10</td><td><span class="badge badge-green">Replied</span></td><td><button class="icon-btn"><i class="fa-solid fa-eye"></i></button></td></tr>
+              <tr><td>Forbes India</td><td>editor@forbesindia.com</td><td>Press / Media</td><td>Feb 9</td><td><span class="badge badge-green">Replied</span></td><td><button class="icon-btn"><i class="fa-solid fa-eye"></i></button></td></tr>
+              <tr><td>Rita Patel</td><td>rita.p@gmail.com</td><td>Feedback</td><td>Feb 8</td><td><span class="badge badge-green">Closed</span></td><td><button class="icon-btn"><i class="fa-solid fa-eye"></i></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM -->
+      <section class="admin-section" data-section="instagram">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Instagram Settings</h3></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div class="input-group"><label>Instagram Handle</label><input type="text" class="input" value="@heypopchips" /></div>
+            <div class="input-group"><label>Access Token (optional)</label><input type="password" class="input" placeholder="Paste embed/API token" /></div>
+            <div class="input-group" style="grid-column:1/-1;"><label>Hashtag to feature</label><input type="text" class="input" value="#HeyPopMoments" /></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:20px;padding:10px 20px;font-size:.85rem;">Save Settings</button>
+        </div>
+      </section>
+
+      <!-- MEDIA -->
+      <section class="admin-section" data-section="media">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Media Library</h3><button class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;">
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--primary));"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--secondary),#FFB266);"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--text),var(--secondary));"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#7E57C2,var(--primary));"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--primary),#FFE970);"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#1A1A1A,#4A4A4A);"></div>
+            <div style="aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6DE0A0);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO -->
+      <section class="admin-section" data-section="seo">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>SEO Settings</h3></div>
+          <div style="display:grid;gap:16px;max-width:720px;">
+            <div class="input-group"><label>Default Meta Title</label><input type="text" class="input" value="Hey Pop Chips — Popped, Never Fried" /></div>
+            <div class="input-group"><label>Meta Description</label><textarea rows="3">Hey Pop Chips makes light, crunchy popped chips with bold flavors and real ingredients. Discover our flavors, find a store near you, or grab a pack online.</textarea></div>
+            <div class="input-group"><label>Open Graph Image URL</label><input type="text" class="input" value="https://heypopchips.com/og.jpg" /></div>
+            <div class="input-group"><label>Google Analytics ID</label><input type="text" class="input" placeholder="G-XXXXXXXX" /></div>
+            <div class="input-group"><label>Sitemap URL</label><input type="text" class="input" value="https://heypopchips.com/sitemap.xml" /></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:20px;padding:10px 20px;font-size:.85rem;">Save SEO</button>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="admin-section" data-section="settings">
+        <div class="admin-panel">
+          <div class="admin-panel-head"><h3>Website Settings</h3></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;">
+            <div class="input-group"><label>Brand Name</label><input type="text" class="input" value="Hey Pop Chips" /></div>
+            <div class="input-group"><label>Phone</label><input type="text" class="input" value="+91 22 6677 8899" /></div>
+            <div class="input-group"><label>Email</label><input type="email" class="input" value="hello@heypopchips.com" /></div>
+            <div class="input-group"><label>WhatsApp</label><input type="text" class="input" value="+91 99990 00000" /></div>
+            <div class="input-group" style="grid-column:1/-1;"><label>HQ Address</label><textarea rows="2">Crunch House, 2nd Floor, Lower Parel, Mumbai 400013</textarea></div>
+            <div class="input-group"><label>Logo URL</label><input type="text" class="input" placeholder="/uploads/logo.svg" /></div>
+            <div class="input-group"><label>Favicon URL</label><input type="text" class="input" placeholder="/uploads/favicon.svg" /></div>
+            <div class="input-group"><label>Instagram URL</label><input type="text" class="input" value="https://instagram.com/heypopchips" /></div>
+            <div class="input-group"><label>Facebook URL</label><input type="text" class="input" value="https://facebook.com/heypopchips" /></div>
+            <div class="input-group"><label>YouTube URL</label><input type="text" class="input" value="https://youtube.com/@heypopchips" /></div>
+            <div class="input-group"><label>LinkedIn URL</label><input type="text" class="input" value="https://linkedin.com/company/heypopchips" /></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:20px;padding:10px 20px;font-size:.85rem;" data-testid="settings-save">Save Settings</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Auth gate (mock)
+    if (!sessionStorage.getItem('hpc_admin')) window.location.href = '/admin/index.html';
+
+    // Tab nav
+    const sections = document.querySelectorAll('.admin-section');
+    const links = document.querySelectorAll('[data-tab]');
+    function activate(tab) {
+      sections.forEach((s) => s.classList.toggle('active', s.dataset.section === tab));
+      document.querySelectorAll('.admin-nav a').forEach((a) => a.classList.toggle('active', a.dataset.tab === tab));
+      const title = document.querySelector(`.admin-nav a[data-tab="${tab}"]`);
+      if (title) document.getElementById('page-title').textContent = title.textContent.trim();
+      window.location.hash = tab;
+    }
+    links.forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); activate(a.dataset.tab); }));
+    const initial = (window.location.hash || '#dashboard').slice(1);
+    activate(initial);
+
+    // Counters
+    document.querySelectorAll('[data-counter]').forEach((el) => {
+      const target = parseFloat(el.dataset.counter);
+      const start = performance.now();
+      const dur = 1200;
+      const tick = (n) => {
+        const p = Math.min(1, (n - start) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target % 1 === 0 ? Math.round(target * e) : (target * e).toFixed(1)).toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem('hpc_admin');
+      window.location.href = '/admin/index.html';
+    });
+  </script>
+</body>
+</html>
